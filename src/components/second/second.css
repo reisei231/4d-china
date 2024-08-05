@@ -1,0 +1,213 @@
+.content-modal1{
+  position: relative;
+  height: 900px;
+}
+
+.content-modal1::after{
+  width: 1320px;
+  height: 1px;
+  background: #ECECEC;
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content-swiper1{
+  height: 856px;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  transition: all linear .8s;
+}
+
+@keyframes showMod {
+  0%   {opacity: 0; top:50px;}
+  100% {opacity: 1; top:0}
+}
+
+.content-wrapper{
+  opacity: 0;
+  top:50px;
+}
+
+.show-mod{
+  animation: showMod ease 1.2s forwards;
+}
+
+
+
+.content-slide-0{
+  background:url(../../../public/img/swiper0-bg0.png) center center no-repeat;
+  width: 1920px;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all linear .8s;
+}
+
+.content-slide-1{
+  background:url(../../../public/img/swiper1-bg0.png) center center no-repeat;
+  width: 1920px;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all linear .8s;
+}
+
+.content-slide-2{
+  background:url(../../../public/img/swiper2-bg0.png) center center no-repeat;
+  width: 1920px;
+  opacity: 0;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  transition: all linear .8s;
+}
+
+.content-slide-active{
+  opacity: 1;
+}
+
+.text-wrap{
+  position: relative;
+  width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.text-wrap p{
+  font-size: 16px;
+  font-weight: 700;
+  color:#FFF;
+  line-height: 36px;
+  position: absolute;
+  left: 200px;
+  bottom: 295px;
+  width: 600px;
+}
+
+.quotes{
+  width: 47px;
+  height: 31px;
+  background: url(../../../public/img/quotes.png) no-repeat;
+  position: absolute;
+  left: 130px;
+  top:384px;
+}
+
+.quotes1{
+  width: 47px;
+  height: 31px;
+  background: url(../../../public/img/quotes.png) no-repeat;
+  position: absolute;
+  left: 624px;
+  top:540px;
+  transform: rotateZ(180deg);
+}
+
+.quotes2{
+  width: 47px;
+  height: 31px;
+  background: url(../../../public/img/quotes.png) no-repeat;
+  position: absolute;
+  top: 576px;
+   left: 558px;
+  transform: rotateZ(180deg);
+}
+
+.quotes3{
+  width: 47px;
+  height: 31px;
+  background: url(../../../public/img/quotes.png) no-repeat;
+  position: absolute;
+  top: 543px;
+   left: 763px;
+  transform: rotateZ(180deg);
+}
+
+.showModal{
+  height: 187px;
+  width: 1320px;
+  position: relative;
+  top: -940px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 40px rgba(0,0,0,.1);
+  background-color: #fff;
+  z-index: 1;
+}
+
+.item{
+  height: 187px;
+  width: 440px;
+  float: left;
+  filter: grayscale(90%);
+  opacity: .5;
+  cursor: pointer;
+}
+
+.active{
+  filter: grayscale(0);
+  opacity: 1;
+  background: linear-gradient(90deg, rgba(82, 148, 255, .08), rgba(106, 34, 237, .08));
+}
+
+@keyframes ad_width {
+  0%   {width: 0;}
+  100% {width: 100%;}
+}
+
+.active::before{
+  content: '';
+    height: 6px;
+    background: linear-gradient(90deg, #5294FF, #6A22ED);
+    position: absolute;
+    animation: ad_width .2s linear forwards;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: inline-block;
+}
+
+.posr{
+  background: url(../../../public/img/swiper-title.png) no-repeat;
+  /* width: 100%; */
+  height: 100%;
+  background-position-x: -440px;
+  zoom:1;
+  position: relative;
+}
+
+.item-right{
+  padding: 43px 73px 0 136px;
+  font-size: 16px;
+  font-weight: 800;
+  color:#222;
+  word-break: break-all;
+}
+
+.item-right p{
+  margin: 0;
+}
+
+.item-right p:nth-of-type(2) {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8D8D8D;
+  line-height: 14px;
+  margin-top: 5px;
+}
+
+.showModal li:nth-of-type(2)>div {
+  background-position-x: -880px;
+}
+
+.showModal li:nth-of-type(3)>div {
+  background-position-x: 0;
+}

@@ -1,0 +1,102 @@
+.newClient{
+    width: 100%;
+    height: 922px;
+    position: relative;
+    display: flex;
+
+}
+
+.client_wrap{
+    flex:1;
+    height: 100%;
+    position: relative;
+    transition: all .3s;
+}
+
+
+@keyframes slideshow1 {
+    0%   {left: -200%;}
+    100% {left: 0;}
+}
+
+.client_bg1{
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../public/img/bg.jpg);
+    position: absolute;
+}
+
+@media screen and (width: 1920px) {
+    .client_bg1 {
+        width: 300%;
+        animation: slideshow1 80s linear infinite;
+    }
+}
+
+.client_bg2{
+    background: url(../../../public/img/img_wrap.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.introduce_client{
+    position: absolute;
+    left: 50%;
+    top: 280px;
+    transform: translate(-50%,0);
+    transition: left .3s;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo5e{
+    height: 200px;
+    width: 200px;
+}
+
+.logo5e1{
+    margin-top: 40px;
+}
+
+
+.img_cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+
+.subtitle{
+    font-size: 28px;
+    font-weight: 400;
+    color:#fff;
+    position: absolute;
+    top:220px;
+}
+
+.button{
+    background-image: url(../../../public/img/button.png);
+    width: 266px;
+    height: 77px;
+    background-size: 100% 100%;
+    margin-top: 100px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    color:#FFF;
+    cursor: pointer;
+}
+
+.button:hover{
+    filter: brightness(1.3);
+    transition: filter 150ms;
+}

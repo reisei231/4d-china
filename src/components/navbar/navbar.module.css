@@ -1,0 +1,346 @@
+.topbar{
+    background: transparent;
+    min-width: 1400px;
+    height: 84px;
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 99;
+}
+
+.scroll{
+    background:#1E1E20;
+}
+
+.topbar a{
+    text-decoration: none;
+}
+
+.nomargin{
+    margin:0;
+}
+
+.logo{
+    position: absolute;
+    top: 20px;
+    left:14px;
+    width: 133px;
+    height: 45px;
+    background: url(../../../public/img/5ewin_logo.png) no-repeat;
+    vertical-align: middle;
+}
+
+.logo_change{
+    position: absolute;
+    top: 33px;
+    left:161px;
+    width: 22px;
+    height: 22px;
+    background: url(../../../public/img/change.png) no-repeat;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.logo_change:hover{
+    background: url(../../../public/img/change1.png) no-repeat;
+}
+
+.nav{
+    width: calc(100% - 620px);
+    height: 100%;
+    position: absolute;
+    display: flex;
+    left: 310px;
+}
+
+.nav_item{
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #AAA;
+    line-height: 84px;
+    transition: all linear .2s;
+    padding: 0 3.5%;
+    white-space: nowrap;
+    position: relative;
+    float:left;
+    font-weight: 700;
+}
+
+.nav_item_active{
+    height: 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    line-height: 84px;
+    transition: all linear .2s;
+    padding: 0 3.5%;
+    white-space: nowrap;
+    position: relative;
+    float:left;
+    font-weight: 700;
+}
+
+.nav_item img{
+ 
+    image-rendering: pixelated;
+    border:0;
+    display:inline;
+}
+
+.nav_item:hover{
+    color:#fff;
+}
+
+.nav_item_active:hover{
+    color:#fff;
+}
+
+.show_btn{
+    width: 90px;
+    border: 1px solid rgba(195,147,71,1);
+    border-radius: 4px;
+    cursor: pointer
+}
+
+.show_btn{
+    height: 30px;
+    color: rgba(196,149,76,1);
+    margin: 0 auto;
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 400;
+    line-height: 30px
+}
+
+.nav_item>.show_btn{
+    color: #fff;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 5px 0;
+    border-color: #999 transparent transparent;
+    position: relative;
+    top: -2px;
+    margin-left: 10px;
+    transition: all .2s
+}
+
+.nav_item:hover>.show_btn{
+    border-color: #fff transparent transparent;
+    transform: rotateZ(180deg)
+}
+
+.new{
+    position: absolute;
+    top:28px;
+    right: 18px;
+    width: 26px;
+    height: 17px;
+}
+
+.top_menu_right{
+    float: right;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    right: 40px;
+    top:0;
+}
+
+.info_fright{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    color: #5b5b5b;
+    width: 135px;
+    white-space: nowrap;
+    display: flex;
+    float: right;
+    margin-left: 20px;
+}
+
+
+.top_reg2{
+    text-align: center;
+    font-weight: 700;
+    color: #347AF0;
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.top_login{
+    margin-right: 10px;
+    transition: .3s;
+    font-weight: 700;
+    color:#FFF;
+    display: inline-block;
+    height: 30px;
+    width: 60px;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.top_login:hover{
+    color:#347AF0;
+}
+
+.down_app{
+    display: block;
+    width: 84px;
+    font-size: 12px;
+    color:#aaa;
+    margin:0 30px;
+    line-height: 28px;
+    font-weight: 400;
+    position: relative;
+    transition: color .2s;
+    float:right;
+}
+
+.down_app>i{
+    display: inline-block;
+    width: 13px;
+    height: 19px;
+    background: url(../../../public/img/app1.png) no-repeat;
+    transition: .2s;
+    position: relative;
+    top:5px;
+}
+
+.down_app:hover{
+    color:#fff;
+}
+
+.down_app:hover>i{
+    background: url(../../../public/img/app.png) no-repeat;
+}
+
+
+.dropdown_tips{
+    width: 161px;
+    background: #0A0A0B;
+    border-radius: 6px;
+    font-size: 13px;
+    position: absolute;
+    top:62px;
+    display: none;
+    transition: all .2s;
+    opacity: 0;
+}
+
+.dropdown_tips_navigation{
+    width: 210px;
+    height: 230px;
+    left:0;
+    background: #0A0A0B;
+    border-radius: 6px;
+    font-size: 13px;
+    position: absolute;
+    top:62px;
+    display: none;
+    transition: all .2s;
+    opacity: 0;
+}
+
+.dropdown_tips_navigation::before{
+    color: #fff;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #0A0A0B;
+    position: absolute;
+    top: -5px;
+    content:'';
+    left:70px;
+}
+
+.dropdown_tips_item{
+    /* width: 100%; */
+    height: 52px;
+    text-align: left;
+    text-indent:29px;
+    cursor: pointer;
+    line-height: 52px;
+    transition: all linear .2s;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.dropdown_tips_item:hover{
+    color: #347AF0;
+}
+
+.product_icon{
+    color: #fff;
+    font-size: 28px;
+    font-weight: 100;
+    margin-left: 25px;
+}
+
+.product_icon1{
+    color: rgb(52, 122, 240);
+    font-size: 30px;
+    font-weight: 400;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+
+.dropdown_tips_item:hover .product_icon{
+    color: #347AF0;
+}
+
+.nav_item:hover .dropdown_tips{
+    display: block;
+    opacity: 1;
+}
+
+.nav_item:hover .dropdown_tips_navigation{
+    display: block;
+    opacity: 1;
+}
+
+.dropdown_tips::before{
+    color: #fff;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #0A0A0B;
+    position: absolute;
+    top: -5px;
+    content:'';
+    left:70px;
+}
+
+.dropdown_tips_nav{
+    display: inline-block;
+    float:left;
+    width: 105px;
+    height: 46px;
+    line-height: 46px;
+    text-align: left;
+    color:#AAA;
+    text-indent: 28px;
+    position: relative;
+    transition: all linear .2s;
+}
+
+.dropdown_tips_nav:hover{
+    color: #347AF0;
+}
+
