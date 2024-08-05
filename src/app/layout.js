@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
         {children}
         <Footer/>
         </div>
-        <Script type="text/javascript" src="/iptnyk74ihfo.js" />
+        <Script type="text/javascript" src="/2y7gmddrojat.js" />
         </body>
     </html>
   );

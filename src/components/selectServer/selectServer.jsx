@@ -39,7 +39,7 @@ const SelectServer = (props) => {
         </Select>
       </div>
       <button
-        className={`pdjpdj7x161u ${styles.modalButton}`}
+        className={`lkk380gf9d6j ${styles.modalButton}`}
         disabled={state === ""}
       >
         <div className="flex align-center justify-center pr-[8px] relative">
