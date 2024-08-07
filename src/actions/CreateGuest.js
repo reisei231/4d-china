@@ -12,7 +12,7 @@ const CreateGuest = async () => {
   }
     const serverCookie = await GetServer();
     const userId = await GetUserId();
-    const response = await fetch(`http://localhost:3000/api/guests`, {
+    const response = await fetch(`http://localhost:80/api/guests`, {
         method: 'POST',
         body: JSON.stringify({serverId:serverCookie.value,designId:userId})
       });

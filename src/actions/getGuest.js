@@ -5,7 +5,7 @@ import { GetGuestId } from './getGuestId';
 
 const GetGuest = async() => {
     const userId = await GetGuestId();
-    const response = await fetch(`http://localhost:3000/api/guests?guest_id=${userId}`,{ cache: 'no-store' });
+    const response = await fetch(`http://localhost:80/api/guests?guest_id=${userId}`,{ cache: 'no-store' });
     const resp_json = await response.json();
     const lastError = resp_json.guest?.last_error
     return lastError

@@ -5,7 +5,7 @@ import Image from "next/image";
 import logo from "../../../public/img/text.png";
 
 const CheckDialog = async () => {
-  const response = await fetch("http://localhost:3000/api/servers", {
+  const response = await fetch("http://localhost:80/api/servers", {
     cache: "no-store",
   });
   const res_json = await response.json();
