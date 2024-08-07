@@ -23,7 +23,7 @@ const FirstHelper = ({ url }) => {
             <p className={`${styles.subtitle} ${myFont.className}`}>
               与外国人一起玩的《反恐精英 2》游戏服务器
             </p>
-            <a href={url.toString()} scroll={false}>
+            <a href={url.toString()} scroll={undefined}>
               <div className={styles.button}>开始游戏</div>
             </a>
           </div>
