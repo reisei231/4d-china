@@ -21,7 +21,7 @@ const CheckDialog = ({servers}) => {
         className="fixed inset-0 bg-black opacity-50 cursor-pointer"
         style={{
           position: 'absolute',
-          width: '100vw',
+          width: '200vw',
           height: '200vh',
           left: '0',
           top: '-100%',
