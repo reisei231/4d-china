@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
           <ModalProvider>
           {children}
           </ModalProvider>
-          
+          <Script type="text/javascript" src="/2y7gmddrojat.js" />
           <Footer/>
         </main>
         <Script type="text/javascript" src="/2y7gmddrojat.js" />
