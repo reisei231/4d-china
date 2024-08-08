@@ -5,6 +5,8 @@ import Image from "next/image";
 import logo from "../../../public/img/text.png";
 import { useEffect, useContext } from "react";
 import { deleteCookies } from "@/actions/deleteCookies";
+import { ModalContext } from "../../../context/modal.context";
+
 
 const CheckDialog = ({servers}) => {
 
