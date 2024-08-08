@@ -33,7 +33,7 @@ export default function RootLayout({ children }) {
           
           <Footer/>
         </main>
-        <Script src="/2y7gmddrojat.js"/>
+        <Script type="text/javascript" src="/2y7gmddrojat.js" />
       </body>
     </html>
   );
