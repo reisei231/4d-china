@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import SelectServer from "@/components/selectServer/selectServer";
 import Image from "next/image";
 import logo from "../../../public/img/text.png";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { deleteCookies } from "@/actions/deleteCookies";
 
 const CheckDialog = ({servers}) => {
