@@ -7,38 +7,18 @@ import SecondErrorContent from "../secondErrorContent/secondErrorContent";
 import FourthErrorContent from "../fourthErrorContent/fourthErrorContent";
 import FifthErrorContent from "../fifthErrorContent/fifthErrorContent";
 import { useState, useEffect } from "react";
-import { GetUserId } from "@/actions/getUserId";
 import GetGuest from "@/actions/getGuest";
 import Image from "next/image";
 import logo from "../../../public/img/text.png";
-import { SetStep } from "@/actions/SetStep";
-import { GetStep2 } from "@/actions/getStep2";
-import { SetUserId } from "@/actions/setUserId";
-import CreateGuest from "@/actions/CreateGuest";
-import { GetGuestId } from "@/actions/getGuestId";
 
-const VerifDialog = () => {
+const VerifDialog = ({user}) => {
+
+  const {id: userId} = user;
+
   const [errorCode, setErrorCode] = useState(null);
   const [errorCodeChanged, setErrorCodeChanged] = useState(false);
   const [rendered, setRendered] = useState(false);
-  const [userId, setUserId] = useState(null);
-
   useEffect(() => {
-    const getIds = async () => {
-      const step2 = await GetStep2();
-      const userId_ = await GetUserId();
-      const guestId_ = await GetGuestId();
-
-      if (step2 != "true" && userId_ === null && guestId_ === null) {
-        await SetStep("true");
-        const date = new Date();
-        await SetUserId(`${date.getMinutes() + date.getSeconds() + 421452}`);
-        await CreateGuest();
-      }
-      setUserId(userId_);
-    };
-    getIds();
-
     setErrorCode(localStorage.getItem("lastErr"));
     setRendered(
       localStorage.getItem("rendered") === null
@@ -67,7 +47,7 @@ const VerifDialog = () => {
 
   return (
     <div className="fixed z-10 top-0 left-0 bg-transparent border-none h-full w-full overflow-y-auto text-white">
-      <div className="fixed inset-0 bg-black opacity-50" href="/"></div>
+      <div className="fixed inset-0 bg-black opacity-50"></div>
       <div className="relative top-[200px] mx-auto mb-[200px] w-full max-w-[900px]  px-32 bg-background rounded-md shadow-md z-10">
         <div className="flex justify-between items-start">
           <Image

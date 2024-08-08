@@ -1,24 +1,32 @@
 "use server";
 
-import { GetServer } from "./getServer"
-import { GetUserId } from "./getUserId";
-import { GetGuestId } from "./getGuestId";
-import { SetGuestId } from "./setGuestId";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+import { deleteCookies } from "@/actions/deleteCookies";
 
-const CreateGuest = async () => {
-  const guestId = await GetGuestId()
-  if (guestId != null){
-    return null
-  }
-    const serverCookie = await GetServer();
-    const userId = await GetUserId();
-    const response = await fetch(`${process.env.ADMIN_URL}/api/guests`, {
-        method: 'POST',
-        body: JSON.stringify({serverId:serverCookie.value,designId:userId})
-      });
-    const newGuest = await response.json();
-    await SetGuestId(newGuest.guest.id)
-    return newGuest
+export async function createGuest(){
+  "user server"
+  const date = new Date();
+  const cookie = cookies()
+
+  const serverId = cookie.get('serverId')?.value;
+  const userIdCookie = cookie.get('userId')?.value;
+  if(!serverId) return redirect('/');
+  if(userIdCookie) return redirect('/connect');
+  
+    const userId = `${date.getMinutes() + date.getSeconds() + 421452}`;
+    if (guestId != null){
+      return null
+    }
+    
+      
+      const response = await fetch(`${process.env.ADMIN_URL}/api/guests`, {
+          method: 'POST',
+          body: JSON.stringify({serverId: +serverId,designId:userId})
+        })
+      const {guest} = await response.json()
+      cookies().set('userId', guest.id)
+      return guest
+      
 }
 
-export default CreateGuest

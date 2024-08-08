@@ -1,17 +1,17 @@
-import react, { useMemo } from "react";
+"use client"
+
+import { useContext, useState } from "react";
 import styles from "./firstHelper.module.css";
 import Image from "next/image";
 import logo from "../../../public/img/logo5e.png";
 import logo1 from "../../../public/img/text.png";
-import localFont from "next/font/local";
-import Link from "next/link";
 
-const myFont = localFont({ src: "./../../../public/fonts/PingFang.ttf" });
+import { ModalContext } from "../../../context/modal.context";
+const FirstHelper = () => {
+  const { isModalOpen, showModal, hideModal } = useContext(ModalContext)
 
-const FirstHelper = ({ url }) => {
-  const els = useMemo(() => {
     return (
-      <div className={styles.newClient}>
+        <div className={styles.newClient}>
         <div className={styles.client_bg1}></div>
         <div className={styles.client_wrap}>
           <div className={styles.client_bg2}></div>
@@ -20,19 +20,15 @@ const FirstHelper = ({ url }) => {
               <Image className={styles.logo5e} src={logo} alt="logo" />
               <Image className={styles.logo5e1} src={logo1} alt="logo" />
             </div>
-            <p className={`${styles.subtitle} ${myFont.className}`}>
+            <p className={`${styles.subtitle}`}>
               与外国人一起玩的《反恐精英 2》游戏服务器
             </p>
-            <a href={url.toString()} scroll={undefined}>
-              <div className={styles.button}>开始游戏</div>
-            </a>
+              <div className={styles.button} onClick={showModal}>开始游戏</div>
           </div>
         </div>
       </div>
+      
     );
-  });
-
-  return <>{els}</>;
 };
 
 export default FirstHelper;

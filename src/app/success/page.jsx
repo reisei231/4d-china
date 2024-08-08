@@ -1,9 +1,18 @@
-"use server";
+"use client"
 
-import SetStepHelper from "@/components/setStepHelper/setStepHelper";
+import {createGuest} from "@/app/actions";
+import First from "@/components/first/first";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-const SuccessPage = async () => {
-  return <SetStepHelper></SetStepHelper>;
+
+export default function SuccessPage() {
+  
+  const router = useRouter()
+  useEffect(() => {
+    createGuest().then(() => router.push('/connect'))
+  },[])
+
+  return(<><First/></>)
 };
 
-export default SuccessPage;

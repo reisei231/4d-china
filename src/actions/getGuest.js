@@ -1,13 +1,14 @@
 "use server";
 
-import { GetGuestId } from './getGuestId';
+import { cookies } from 'next/headers';
 
 
 const GetGuest = async() => {
-    const userId = await GetGuestId();
+    const userId = cookies().get('userId').value
     const response = await fetch(`${process.env.ADMIN_URL}/api/guests?guest_id=${userId}`,{ cache: 'no-store' });
-    const resp_json = await response.json();
-    const lastError = resp_json.guest?.last_error
+    const user = await response.json();
+    console.log(user)
+    const lastError = user.guest?.last_error
     return lastError
 }
 

@@ -27,7 +27,7 @@ export default function Home(props) {
       {showModal && step == "2" && (
         <>
           <HideOverflow />
-          <VerifDialog />
+          {/* <VerifDialog /> */}
         </>
       )}
       {!showModal && <ShowOverflow />}

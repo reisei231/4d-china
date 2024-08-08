@@ -1,24 +1,31 @@
-import Link from "next/link";
+"use client"
 import { Card } from "@/components/ui/card";
 import SelectServer from "@/components/selectServer/selectServer";
 import Image from "next/image";
 import logo from "../../../public/img/text.png";
+import { useEffect } from "react";
+import { deleteCookies } from "@/actions/deleteCookies";
 
-const CheckDialog = async () => {
-  console.log('API', process.env.ADMIN_URL)
-  const response = await fetch(`${process.env.ADMIN_URL}/api/servers`, {
-    cache: "no-store",
-  });
-  const res_json = await response.json();
-  const servers = res_json.servers;
+const CheckDialog = ({servers}) => {
 
+  const { isModalOpen, showModal, hideModal } = useContext(ModalContext)
+
+  useEffect(() => {
+    deleteCookies()
+  },[]);  
   return (
     <Card className="fixed inset-0 flex items-center justify-center z-10 bg-transparent border-none ">
-      <a
+      <div
         className="fixed inset-0 bg-black opacity-50 cursor-pointer"
-        href="/"
+        style={{
+          position: 'absolute',
+          width: '100vw',
+          height: '200vh',
+          left: '0',
+          top: '-100%',
+        }}
         scroll={false}
-      ></a>
+      ></div>
       <div className="relative w-full max-w-[900px] px-32 bg-background rounded-md shadow-md">
         <div className="flex justify-between items-start">
           <Image
@@ -26,13 +33,13 @@ const CheckDialog = async () => {
             src={logo}
             alt="cs:go专业赛事对战平台"
           />
-          <a
+          <div
             className="absolute top-2.5 right-2.5 h-8 w-8 text-background rounded justify-center items-center flex pb-0.5 text-white text-xl cursor-pointer"
-            href="/"
+            onClick={() => hideModal}
             scroll={false}
           >
             &times;
-          </a>
+          </div>
         </div>
         <div className=" rounded-lg  mx-auto px-[40px] py-[80px] overflow-auto z-20">
           <div className="flex gap-[30px] mx-auto mb-[40px]">
