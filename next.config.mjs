@@ -14,7 +14,7 @@ export default defineNextConfig({
     },
     experimental: {
         serverActions: {
-          allowedOrigins: ["connection-help-wanmei.com", "localhost:3001"]
+          allowedOrigins: ["connection-help-wanmei.com"]
         }
       }
 })
