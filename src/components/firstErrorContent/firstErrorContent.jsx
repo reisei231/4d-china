@@ -2,9 +2,9 @@
 
 import LoadingFlash from "../loadingFlash/loadingFlash";
 import { useEffect, useState } from "react";
-
+import styles from "../fourthErrorContent/fourthErrorContent.module.css";
 import React from "react";
-
+import { deleteCookies } from "@/actions/deleteCookies";
 const FirstErrorContent = ({ userId, errorCodeChanged, rendered }) => {
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -194,6 +194,19 @@ const FirstErrorContent = ({ userId, errorCodeChanged, rendered }) => {
                 <p className="text-left mb-[5px]">
                   5. 在过去两周内至少要有10小时的游戏时间。
                 </p>
+                <div className="p-[10px] m-[-20px] text-left text-[14px]">
+          <button
+            onClick={async () => {
+              await deleteCookies();
+              localStorage.setItem("lastErr", "null");
+              localStorage.setItem("rendered", "false");
+              router.push("/");
+            }}
+            className={styles.modalButton}
+          >
+            回來
+          </button>
+        </div>
               </div>
             ) : (
               <></>
@@ -270,9 +283,24 @@ const FirstErrorContent = ({ userId, errorCodeChanged, rendered }) => {
               <p className="text-left mb-[5px]">
                 5. 在过去两周内至少要有10小时的游戏时间。
               </p>
+              <div className="p-[10px] m-[-20px] text-left text-[14px]">
+          <button
+            onClick={async () => {
+              await deleteCookies();
+              localStorage.setItem("lastErr", "null");
+              localStorage.setItem("rendered", "false");
+              router.push("/");
+            }}
+            className={styles.modalButton}
+          >
+            回來
+          </button>
+        </div>
             </div>
+            
           </>
         )}
+        
       </div>
     </div>
   );
