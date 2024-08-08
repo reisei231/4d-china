@@ -23,7 +23,7 @@ const CheckDialog = ({servers}) => {
           position: 'absolute',
           width: '200vw',
           height: '200vh',
-          left: '0',
+          left: '-30%',
           top: '-100%',
         }}
         scroll={false}
